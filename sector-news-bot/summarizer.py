@@ -94,7 +94,7 @@ Article:
     try:
         json.loads(output_text)
     except Exception:
-        print("⚠️ Model did not return valid JSON, wrapping in {}")
+        print("Model did not return valid JSON, wrapping in {}")
         return "{}"
 
     return output_text
@@ -139,22 +139,22 @@ def test_single_article():
     print(summary_json)
 
 def perform_summarization():
-    print("🔍 Fetching unsummarized news...")
+    print(" Fetching unsummarized news...")
     rows = get_unsummarized_news()
-    print(f"➡️ Retrieved {len(rows)} rows")
+    print(f" Retrieved {len(rows)} rows")
     sectors ={}
     for nid, title, link, sector in rows:
         sectors.setdefault(sector, []).append((nid, title, link))
-    print(f"📂 Grouped into {len(sectors)} sectors")
+    print(f" Grouped into {len(sectors)} sectors")
     for sector, items in sectors.items():
         print(f"\n=== Processing sector: {sector.upper()} ===")
         headlines = [title for (_, title, _) in items]
-        print(f"📰 Total headlines: {len(headlines)}")
+        print(f" Total headlines: {len(headlines)}")
         top3 = pick_top_headlines(sector, headlines)
-        print(f"⭐ Picked top 3 headlines :\n{top3}")
+        print(f"Picked top 3 headlines :\n{top3}")
         for (nid, title, link) in items:
             if title in top3:
-                print(f"✍️ Summarizing: {title}")
+                print(f"Summarizing: {title}")
                 article_text = fetch_article_content(link, title)
                 summary_json = summarize_text(article_text)
                 update_summary(nid, summary_json)
