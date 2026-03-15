@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Rituraj Banerjee | AI Portfolio</title>
 
@@ -9,25 +12,42 @@
 
 <style>
 
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
 body{
 font-family:'Space Grotesk',sans-serif;
-margin:0;
 background:#f9fafc;
 color:#111;
 }
 
-/* NAV */
+/* CONTAINER */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 clamp(20px,5vw,80px);
+}
+
+/* NAVBAR */
 
 nav{
+width:100%;
+}
+
+.nav-inner{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:35px 100px;
+padding:clamp(10px,4vw,35px) 0;
 }
 
 .logo{
 font-weight:700;
-font-size:22px;
+font-size:clamp(18px,1.6vw,22px);
 letter-spacing:-0.5px;
 }
 
@@ -42,6 +62,12 @@ border-radius:8px;
 text-decoration:none;
 color:#2563eb;
 font-weight:500;
+transition:0.2s;
+}
+
+.contact-btn:hover{
+background:#2563eb;
+color:white;
 }
 
 /* HERO */
@@ -50,12 +76,12 @@ font-weight:500;
 display:grid;
 grid-template-columns:1.1fr 1fr;
 align-items:center;
-gap:60px;
-padding:60px 100px;
+gap:clamp(30px,5vw,60px);
+padding:0 0 clamp(60px,10vw,120px) 0;
 }
 
 .hero h1{
-font-size:64px;
+font-size:clamp(36px,5vw,64px);
 line-height:1.1;
 margin-bottom:20px;
 }
@@ -65,7 +91,7 @@ color:#2563eb;
 }
 
 .hero p{
-font-size:20px;
+font-size:clamp(16px,1.4vw,20px);
 color:#555;
 max-width:520px;
 margin-bottom:30px;
@@ -76,6 +102,7 @@ margin-bottom:30px;
 .skills{
 display:flex;
 gap:14px;
+flex-wrap:wrap;
 margin-bottom:30px;
 }
 
@@ -99,7 +126,7 @@ padding:14px 26px;
 border-radius:10px;
 text-decoration:none;
 font-weight:500;
-transition:0.2s;
+transition:0.25s;
 }
 
 .github-btn:hover{
@@ -107,28 +134,32 @@ transform:translateY(-2px);
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* IMAGE */
+/* HERO IMAGE */
 
 .hero img{
 width:100%;
+max-width:520px;
 border-radius:16px;
+justify-self:center;
 }
 
-/* PROJECT SECTION */
+/* PROJECTS */
 
 .projects{
-padding:100px;
+padding:clamp(60px,10vw,120px) 0;
 }
 
 .projects h2{
-font-size:36px;
+font-size:clamp(26px,3vw,36px);
 margin-bottom:40px;
 }
 
+/* PROJECT CARDS */
+
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:clamp(20px,3vw,30px);
 }
 
 .card{
@@ -146,11 +177,12 @@ box-shadow:0 15px 35px rgba(0,0,0,0.1);
 
 .card h3{
 color:#2563eb;
-margin-top:0;
+margin-bottom:10px;
 }
 
 .card p{
 color:#555;
+margin-bottom:15px;
 }
 
 .card a{
@@ -165,15 +197,20 @@ font-weight:500;
 
 .hero{
 grid-template-columns:1fr;
-padding:60px 40px;
+text-align:center;
 }
 
-nav{
-padding:25px 40px;
+.hero p{
+margin:auto;
+margin-bottom:30px;
 }
 
-.projects{
-padding:60px 40px;
+.skills{
+justify-content:center;
+}
+
+.hero img{
+margin-top:20px;
 }
 
 }
@@ -182,48 +219,42 @@ padding:60px 40px;
 
 </head>
 
-
 <body>
 
 
+<!-- NAVBAR -->
+
 <nav>
 
+<div class="container nav-inner">
+
 <div class="logo">
-
 rituraj<span>banerjee</span>
-
 </div>
 
 <a class="contact-btn" href="https://linkedin.com/in/rituraj-banerjee">
-
 Contact
-
 </a>
+
+</div>
 
 </nav>
 
 
+<!-- HERO -->
 
-<section class="hero">
-
+<section class="hero container">
 
 <div>
 
 <h1>
-
 Hello, I'm <span>Rituraj Banerjee</span>
-
 </h1>
 
-
 <p>
-
 AI Product Manager building intelligent systems powered by Generative AI.
-
 Master’s in Data Science & Management from IIM Indore and IIT Indore.
-
 </p>
-
 
 <div class="skills">
 
@@ -233,50 +264,38 @@ Master’s in Data Science & Management from IIM Indore and IIT Indore.
 
 </div>
 
-
-<a class="github-btn" href="https://github.com/RiturajBanerjee">
-
+<a class="github-btn" href="https://github.com/RiturajBanerjee/ai-portfolio">
 🐙 Explore GitHub →
-
 </a>
-
 
 </div>
 
-
-<img src="images/abstract-image.png">
-
+<img src="images/abstract-image.png" alt="AI abstract illustration">
 
 </section>
 
 
+<!-- PROJECTS -->
 
-<section class="projects">
+<section class="projects container">
 
 <h2>Featured AI Projects</h2>
 
-
 <div class="cards">
-
 
 <div class="card">
 
 <h3>Brand Perception Analyzer</h3>
 
 <p>
-
 LLM powered analytics system that converts customer reviews into structured brand intelligence.
-
 </p>
 
 <a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/brand-perception-analyser/docs">
-
 View Project →
-
 </a>
 
 </div>
-
 
 
 <div class="card">
@@ -284,19 +303,14 @@ View Project →
 <h3>Developer Feedback Aggregator</h3>
 
 <p>
-
 AI pipeline that analyzes developer community discussions to identify product pain points.
-
 </p>
 
 <a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/developer-feedback-aggregator/docs">
-
 View Project →
-
 </a>
 
 </div>
-
 
 
 <div class="card">
@@ -304,22 +318,16 @@ View Project →
 <h3>Sector News AI Agent</h3>
 
 <p>
-
 AI agent that monitors industry news and extracts strategic insights.
-
 </p>
 
 <a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/sector-news-bot/docs">
-
 View Project →
-
 </a>
 
 </div>
 
-
 </div>
-
 
 </section>
 
