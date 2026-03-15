@@ -9,50 +9,73 @@
 <style>
 
 body{
-font-family:Inter, sans-serif;
+font-family:Inter;
 margin:0;
-background:#0f172a;
-color:#e2e8f0;
-line-height:1.6;
+background:#0b0f19;
+color:white;
+overflow-x:hidden;
 }
 
-h1,h2,h3{
-margin-bottom:10px;
+section{
+padding:120px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 .hero{
-background:linear-gradient(135deg,#3b82f6,#6366f1);
-padding:100px 20px;
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+background:radial-gradient(circle at top,#2563eb,#0b0f19);
 }
 
 .hero h1{
-font-size:54px;
+font-size:64px;
 margin-bottom:10px;
 }
 
-.hero p{
-font-size:20px;
-max-width:800px;
-margin:auto;
+.hero h2{
+font-weight:400;
+color:#9ca3af;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
+.hero-buttons{
+margin-top:30px;
+}
+
+.btn{
+padding:14px 28px;
+margin:10px;
+border-radius:8px;
+border:none;
+font-size:16px;
+cursor:pointer;
+}
+
+.btn-primary{
+background:#3b82f6;
+color:white;
+}
+
+.btn-outline{
+background:transparent;
+border:1px solid #3b82f6;
+color:#3b82f6;
 }
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+margin-top:60px;
 }
 
 .card{
-background:#1e293b;
-padding:30px;
+background:#111827;
+padding:35px;
 border-radius:12px;
 transition:0.3s;
 }
@@ -63,37 +86,28 @@ box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .card h3{
-color:#38bdf8;
+color:#60a5fa;
 }
 
-.card a{
-color:#22c55e;
-text-decoration:none;
-font-weight:600;
+.highlight{
+color:#60a5fa;
 }
 
-.section-title{
-font-size:32px;
-margin-bottom:10px;
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
 }
 
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:20px;
-}
-
-.skill-box{
-background:#1e293b;
-padding:20px;
-border-radius:8px;
+.fade.show{
+opacity:1;
+transform:none;
 }
 
 footer{
 text-align:center;
-padding:40px;
-opacity:0.7;
+padding:60px;
+color:#9ca3af;
 }
 
 </style>
@@ -102,51 +116,62 @@ opacity:0.7;
 
 <body>
 
-<div class="hero">
+
+<section class="hero fade">
 
 <h1>Rituraj Banerjee</h1>
 
-<p>
-AI Product Portfolio
+<h2>
+AI Product Manager building intelligent systems powered by Generative AI
+</h2>
+
+<p style="max-width:700px;margin-top:20px">
+
+AI-focused Product Manager with experience designing LLM powered analytics platforms, AI agents, and enterprise automation systems.
+
+Master’s in Data Science & Management from IIM Indore and IIT Indore.
+
 </p>
 
-<p>
-Building intelligent systems that transform complex data into actionable insights.
-</p>
+<div class="hero-buttons">
 
-<p>
-Master’s in Data Science & Management
-</p>
+<a href="rituraj_banerjee_resume.pdf">
+<button class="btn btn-primary">Download Resume</button>
+</a>
+
+<a href="https://linkedin.com/in/rituraj-banerjee">
+<button class="btn btn-outline">Connect on LinkedIn</button>
+</a>
 
 </div>
 
+</section>
 
-<div class="container">
 
-<h2 class="section-title">About Me</h2>
+
+<section class="fade">
+
+<h2>About</h2>
 
 <p>
 
-I build AI driven systems designed to solve real world problems using machine learning, large language models, and scalable data pipelines.
+I design AI products that transform complex data into actionable insights.
 
-My academic training in Data Science and Management provided a strong foundation in statistics, machine learning, and data driven decision making. Through this work I developed a deep interest in designing AI systems that create measurable business impact.
+My work combines product strategy with hands-on experimentation using large language models, data pipelines, and machine learning systems.
 
-My focus is not just building models. I focus on designing complete AI products.
+Through my Master’s in Data Science & Management and experience building enterprise platforms, I have focused on solving real-world problems using AI.
 
-This includes identifying the right problem, designing intelligent pipelines, validating insights, and translating complex models into systems that people can actually use.
+Rather than building models in isolation, I focus on designing complete AI systems that deliver measurable business value.
 
 </p>
 
-</div>
+</section>
 
 
-<div class="container">
 
-<h2 class="section-title">AI Product Portfolio</h2>
+<section class="fade">
 
-<p>
-The following projects demonstrate applied AI systems designed with a strong product mindset. Each project focuses on solving a real problem using modern AI techniques.
-</p>
+<h2>Featured AI Projects</h2>
 
 <div class="projects">
 
@@ -157,29 +182,15 @@ The following projects demonstrate applied AI systems designed with a strong pro
 
 <p>
 
-An AI driven analytics framework that converts large scale customer reviews into structured brand intelligence.
+An AI-driven insights platform that analyses 187k+ customer reviews to quantify brand perception using generative AI.
 
-The system extracts aspect level sentiment using large language models and converts unstructured feedback into measurable brand perception scores.
+The system extracts product aspects, performs sentiment analysis, and generates structured brand intelligence.
 
 </p>
 
-<p>
-Key Highlights
-</p>
-
-<ul>
-
-<li>Processed more than 180000 customer reviews</li>
-
-<li>Generated structured brand perception insights</li>
-
-<li>Applied aspect based sentiment analysis using LLMs</li>
-
-<li>Connected insights to marketing frameworks</li>
-
-</ul>
-
-<a href="brand-perception-analyser/docs/index.md">Explore Project →</a>
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/brand-perception-analyser/docs">
+Explore Project →
+</a>
 
 </div>
 
@@ -191,23 +202,13 @@ Key Highlights
 
 <p>
 
-Developer communities generate enormous amounts of feedback across forums, repositories, and issue trackers. This system aggregates developer conversations and extracts meaningful product insights.
+AI system that aggregates developer community feedback across forums and repositories to identify product pain points and emerging themes.
 
 </p>
 
-<ul>
-
-<li>Aggregates community discussions</li>
-
-<li>Detects recurring product pain points</li>
-
-<li>Uses AI summarization for insight extraction</li>
-
-<li>Transforms raw feedback into structured signals</li>
-
-</ul>
-
-<a href="developer-feedback-aggregator/docs/index.md">Explore Project →</a>
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/developer-feedback-aggregator/docs">
+Explore Project →
+</a>
 
 </div>
 
@@ -219,103 +220,43 @@ Developer communities generate enormous amounts of feedback across forums, repos
 
 <p>
 
-An AI powered monitoring system designed to track industry news and convert unstructured signals into structured insights.
-
-The system continuously monitors news streams and identifies emerging trends relevant to specific sectors.
+AI agent that monitors industry news and extracts strategic signals relevant to specific sectors.
 
 </p>
+
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/sector-news-bot/docs">
+Explore Project →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="fade">
+
+<h2>Core Focus</h2>
 
 <ul>
 
-<li>Automated news ingestion</li>
+<li>Generative AI product development</li>
 
-<li>Topic clustering and signal detection</li>
+<li>LLM powered analytics systems</li>
 
-<li>AI generated summaries</li>
+<li>AI agents and automation</li>
 
-<li>Strategic insight extraction</li>
+<li>Data driven product strategy</li>
+
+<li>Enterprise platform products</li>
 
 </ul>
 
-<a href="sector-news-bot/docs/index.md">Explore Project →</a>
+</section>
 
-</div>
-
-
-</div>
-
-</div>
-
-
-<div class="container">
-
-<h2 class="section-title">Technical Focus</h2>
-
-<div class="skills">
-
-<div class="skill-box">
-
-<h3>Generative AI</h3>
-
-<p>
-Building systems powered by large language models for information extraction, summarization, and analytics.
-</p>
-
-</div>
-
-
-<div class="skill-box">
-
-<h3>Machine Learning</h3>
-
-<p>
-Designing models that convert unstructured data into structured insights that support decision making.
-</p>
-
-</div>
-
-
-<div class="skill-box">
-
-<h3>AI Product Thinking</h3>
-
-<p>
-Designing end to end AI systems that solve real problems instead of building isolated models.
-</p>
-
-</div>
-
-
-<div class="skill-box">
-
-<h3>Data Driven Systems</h3>
-
-<p>
-Building scalable pipelines capable of processing large real world datasets.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="container">
-
-<h2 class="section-title">What Drives My Work</h2>
-
-<p>
-
-Artificial intelligence is most powerful when it transforms complex information into insights that people can act on.
-
-The goal of my work is to design AI systems that bridge the gap between machine learning capabilities and real business decisions.
-
-Instead of building models in isolation, I focus on building systems that help people understand signals hidden inside large datasets.
-
-</p>
-
-</div>
 
 
 <footer>
@@ -323,6 +264,28 @@ Instead of building models in isolation, I focus on building systems that help p
 <p>© Rituraj Banerjee</p>
 
 </footer>
+
+
+
+<script>
+
+const elements=document.querySelectorAll('.fade')
+
+function reveal(){
+elements.forEach(el=>{
+const windowHeight=window.innerHeight
+const elementTop=el.getBoundingClientRect().top
+if(elementTop<windowHeight-100){
+el.classList.add('show')
+}
+})
+}
+
+window.addEventListener('scroll',reveal)
+
+reveal()
+
+</script>
 
 
 </body>
