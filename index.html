@@ -11,35 +11,29 @@
 body{
 font-family:Inter;
 margin:0;
-background:#0b0f19;
+background:#0a0f1c;
 color:white;
-overflow-x:hidden;
+line-height:1.6;
 }
 
-section{
-padding:120px 20px;
-max-width:1100px;
-margin:auto;
-}
+/* HERO */
 
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+padding:120px 20px 80px 20px;
 text-align:center;
-background:radial-gradient(circle at top,#2563eb,#0b0f19);
+background:radial-gradient(circle at top,#2563eb,#0a0f1c);
 }
 
 .hero h1{
-font-size:64px;
+font-size:56px;
 margin-bottom:10px;
 }
 
-.hero h2{
-font-weight:400;
-color:#9ca3af;
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+color:#cbd5f5;
 }
 
 .hero-buttons{
@@ -47,12 +41,12 @@ margin-top:30px;
 }
 
 .btn{
-padding:14px 28px;
-margin:10px;
+padding:12px 26px;
 border-radius:8px;
 border:none;
-font-size:16px;
+font-size:15px;
 cursor:pointer;
+margin:8px;
 }
 
 .btn-primary{
@@ -61,53 +55,80 @@ color:white;
 }
 
 .btn-outline{
-background:transparent;
 border:1px solid #3b82f6;
+background:transparent;
 color:#3b82f6;
 }
 
+/* SECTIONS */
+
+section{
+max-width:1000px;
+margin:auto;
+padding:70px 20px;
+}
+
+h2{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.section-sub{
+color:#9ca3af;
+max-width:700px;
+}
+
+/* PROJECTS */
+
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-margin-top:60px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
 }
 
 .card{
 background:#111827;
-padding:35px;
+padding:28px;
 border-radius:12px;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.4);
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,0.4);
 }
 
 .card h3{
 color:#60a5fa;
+margin-top:0;
 }
 
-.highlight{
-color:#60a5fa;
+.card a{
+color:#22c55e;
+text-decoration:none;
+font-weight:500;
 }
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+color:#9ca3af;
+}
+
+/* SCROLL ANIMATION */
 
 .fade{
 opacity:0;
-transform:translateY(30px);
-transition:1s;
+transform:translateY(25px);
+transition:0.8s;
 }
 
 .fade.show{
 opacity:1;
 transform:none;
-}
-
-footer{
-text-align:center;
-padding:60px;
-color:#9ca3af;
 }
 
 </style>
@@ -117,17 +138,13 @@ color:#9ca3af;
 <body>
 
 
-<section class="hero fade">
+<div class="hero">
 
 <h1>Rituraj Banerjee</h1>
 
-<h2>
-AI Product Manager building intelligent systems powered by Generative AI
-</h2>
+<p>
 
-<p style="max-width:700px;margin-top:20px">
-
-AI-focused Product Manager with experience designing LLM powered analytics platforms, AI agents, and enterprise automation systems.
+AI Product Manager building intelligent systems powered by Generative AI.
 
 Master’s in Data Science & Management from IIM Indore and IIT Indore.
 
@@ -145,7 +162,7 @@ Master’s in Data Science & Management from IIM Indore and IIT Indore.
 
 </div>
 
-</section>
+</div>
 
 
 
@@ -153,15 +170,11 @@ Master’s in Data Science & Management from IIM Indore and IIT Indore.
 
 <h2>About</h2>
 
-<p>
+<p class="section-sub">
 
-I design AI products that transform complex data into actionable insights.
+I build AI products that transform complex data into actionable insights. My work combines product strategy with hands-on experimentation using large language models, data pipelines, and machine learning systems.
 
-My work combines product strategy with hands-on experimentation using large language models, data pipelines, and machine learning systems.
-
-Through my Master’s in Data Science & Management and experience building enterprise platforms, I have focused on solving real-world problems using AI.
-
-Rather than building models in isolation, I focus on designing complete AI systems that deliver measurable business value.
+With a background in both engineering and product management, I focus on designing AI systems that solve real-world problems and deliver measurable business impact.
 
 </p>
 
@@ -173,6 +186,12 @@ Rather than building models in isolation, I focus on designing complete AI syste
 
 <h2>Featured AI Projects</h2>
 
+<p class="section-sub">
+
+These projects demonstrate how AI can transform unstructured data into meaningful insights and product intelligence.
+
+</p>
+
 <div class="projects">
 
 
@@ -182,18 +201,17 @@ Rather than building models in isolation, I focus on designing complete AI syste
 
 <p>
 
-An AI-driven insights platform that analyses 187k+ customer reviews to quantify brand perception using generative AI.
-
-The system extracts product aspects, performs sentiment analysis, and generates structured brand intelligence.
+LLM-powered analytics platform that converts customer reviews into structured brand intelligence.
 
 </p>
 
-<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/brand-perception-analyser/docs">
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/brand-perception-analyser/docs/index.md">
+
 Explore Project →
+
 </a>
 
 </div>
-
 
 
 <div class="card">
@@ -202,16 +220,17 @@ Explore Project →
 
 <p>
 
-AI system that aggregates developer community feedback across forums and repositories to identify product pain points and emerging themes.
+AI pipeline that analyzes developer community discussions to identify product pain points.
 
 </p>
 
-<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/developer-feedback-aggregator/docs">
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/developer-feedback-aggregator/docs/index.md">
+
 Explore Project →
+
 </a>
 
 </div>
-
 
 
 <div class="card">
@@ -220,40 +239,20 @@ Explore Project →
 
 <p>
 
-AI agent that monitors industry news and extracts strategic signals relevant to specific sectors.
+AI agent that monitors industry news and extracts strategic insights from large volumes of information.
 
 </p>
 
-<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/sector-news-bot/docs">
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/sector-news-bot/docs/index.md">
+
 Explore Project →
+
 </a>
 
 </div>
 
 
 </div>
-
-</section>
-
-
-
-<section class="fade">
-
-<h2>Core Focus</h2>
-
-<ul>
-
-<li>Generative AI product development</li>
-
-<li>LLM powered analytics systems</li>
-
-<li>AI agents and automation</li>
-
-<li>Data driven product strategy</li>
-
-<li>Enterprise platform products</li>
-
-</ul>
 
 </section>
 
@@ -282,7 +281,6 @@ el.classList.add('show')
 }
 
 window.addEventListener('scroll',reveal)
-
 reveal()
 
 </script>
