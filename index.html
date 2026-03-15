@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Rituraj Banerjee | AI Product Portfolio</title>
+<title>Rituraj Banerjee | AI Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -11,124 +12,110 @@
 body{
 font-family:Inter;
 margin:0;
-background:#0a0f1c;
-color:white;
-line-height:1.6;
+background:white;
+color:#111;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 80px;
+}
+
+.logo{
+font-weight:600;
+font-size:20px;
+}
+
+.contact-btn{
+border:1px solid #2563eb;
+padding:8px 18px;
+border-radius:8px;
+color:#2563eb;
+text-decoration:none;
 }
 
 /* HERO */
 
 .hero{
-padding:120px 20px 80px 20px;
-text-align:center;
-background:radial-gradient(circle at top,#2563eb,#0a0f1c);
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+padding:80px;
+gap:60px;
 }
 
 .hero h1{
-font-size:56px;
+font-size:60px;
 margin-bottom:10px;
+}
+
+.hero h1 span{
+color:#2563eb;
 }
 
 .hero p{
-max-width:700px;
-margin:auto;
-font-size:18px;
-color:#cbd5f5;
+color:#555;
+max-width:500px;
 }
 
-.hero-buttons{
-margin-top:30px;
-}
-
-.btn{
-padding:12px 26px;
-border-radius:8px;
+.explore{
+margin-top:25px;
+background:#2563eb;
 border:none;
-font-size:15px;
-cursor:pointer;
-margin:8px;
-}
-
-.btn-primary{
-background:#3b82f6;
+padding:14px 26px;
 color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
 }
 
-.btn-outline{
-border:1px solid #3b82f6;
-background:transparent;
-color:#3b82f6;
-}
-
-/* SECTIONS */
-
-section{
-max-width:1000px;
-margin:auto;
-padding:70px 20px;
-}
-
-h2{
-font-size:34px;
-margin-bottom:10px;
-}
-
-.section-sub{
-color:#9ca3af;
-max-width:700px;
+.hero img{
+width:100%;
+border-radius:16px;
 }
 
 /* PROJECTS */
 
 .projects{
+padding:100px 80px;
+}
+
+.projects h2{
+font-size:34px;
+margin-bottom:30px;
+}
+
+.cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-margin-top:40px;
 }
 
 .card{
-background:#111827;
-padding:28px;
+border:1px solid #eee;
+padding:30px;
 border-radius:12px;
 transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,0.4);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .card h3{
-color:#60a5fa;
 margin-top:0;
+color:#2563eb;
 }
 
 .card a{
-color:#22c55e;
 text-decoration:none;
+color:#2563eb;
 font-weight:500;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:40px;
-color:#9ca3af;
-}
-
-/* SCROLL ANIMATION */
-
-.fade{
-opacity:0;
-transform:translateY(25px);
-transition:0.8s;
-}
-
-.fade.show{
-opacity:1;
-transform:none;
 }
 
 </style>
@@ -137,10 +124,23 @@ transform:none;
 
 <body>
 
+<nav>
 
-<div class="hero">
+<div class="logo">riturajbanerjee</div>
 
-<h1>Rituraj Banerjee</h1>
+<a class="contact-btn" href="https://linkedin.com/in/rituraj-banerjee">
+Contact
+</a>
+
+</nav>
+
+
+
+<section class="hero">
+
+<div>
+
+<h1>Hello, I'm <span>Rituraj Banerjee</span></h1>
 
 <p>
 
@@ -150,49 +150,26 @@ Master’s in Data Science & Management from IIM Indore and IIT Indore.
 
 </p>
 
-<div class="hero-buttons">
+<button class="explore" onclick="document.getElementById('projects').scrollIntoView()">
 
-<a href="rituraj_banerjee_resume.pdf">
-<button class="btn btn-primary">Download Resume</button>
-</a>
+Explore Featured Projects
 
-<a href="https://linkedin.com/in/rituraj-banerjee">
-<button class="btn btn-outline">Connect on LinkedIn</button>
-</a>
-
-</div>
+</button>
 
 </div>
 
 
-
-<section class="fade">
-
-<h2>About</h2>
-
-<p class="section-sub">
-
-I build AI products that transform complex data into actionable insights. My work combines product strategy with hands-on experimentation using large language models, data pipelines, and machine learning systems.
-
-With a background in both engineering and product management, I focus on designing AI systems that solve real-world problems and deliver measurable business impact.
-
-</p>
+<img src="images/hero-ai.png">
 
 </section>
 
 
 
-<section class="fade">
+<section id="projects" class="projects">
 
 <h2>Featured AI Projects</h2>
 
-<p class="section-sub">
-
-These projects demonstrate how AI can transform unstructured data into meaningful insights and product intelligence.
-
-</p>
-
-<div class="projects">
+<div class="cards">
 
 
 <div class="card">
@@ -201,17 +178,18 @@ These projects demonstrate how AI can transform unstructured data into meaningfu
 
 <p>
 
-LLM-powered analytics platform that converts customer reviews into structured brand intelligence.
+LLM-powered analytics system that converts large-scale customer reviews into structured brand insights.
 
 </p>
 
-<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/brand-perception-analyser/docs/index.md">
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/brand-perception-analyser/docs">
 
-Explore Project →
+View Project →
 
 </a>
 
 </div>
+
 
 
 <div class="card">
@@ -220,17 +198,18 @@ Explore Project →
 
 <p>
 
-AI pipeline that analyzes developer community discussions to identify product pain points.
+AI pipeline that analyzes developer communities to identify product pain points.
 
 </p>
 
-<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/developer-feedback-aggregator/docs/index.md">
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/developer-feedback-aggregator/docs">
 
-Explore Project →
+View Project →
 
 </a>
 
 </div>
+
 
 
 <div class="card">
@@ -239,13 +218,13 @@ Explore Project →
 
 <p>
 
-AI agent that monitors industry news and extracts strategic insights from large volumes of information.
+AI agent that monitors industry news and extracts strategic insights.
 
 </p>
 
-<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/sector-news-bot/docs/index.md">
+<a href="https://github.com/RiturajBanerjee/ai-portfolio/tree/main/sector-news-bot/docs">
 
-Explore Project →
+View Project →
 
 </a>
 
@@ -256,34 +235,6 @@ Explore Project →
 
 </section>
 
-
-
-<footer>
-
-<p>© Rituraj Banerjee</p>
-
-</footer>
-
-
-
-<script>
-
-const elements=document.querySelectorAll('.fade')
-
-function reveal(){
-elements.forEach(el=>{
-const windowHeight=window.innerHeight
-const elementTop=el.getBoundingClientRect().top
-if(elementTop<windowHeight-100){
-el.classList.add('show')
-}
-})
-}
-
-window.addEventListener('scroll',reveal)
-reveal()
-
-</script>
 
 
 </body>
