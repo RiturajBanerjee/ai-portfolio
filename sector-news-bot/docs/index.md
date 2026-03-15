@@ -45,4 +45,4 @@ File map
 - docs/ — documentation (this file)
 - .env — local secrets (do not commit)
 
-![Final newsletter screenshot](images/newsletter-screenshot.png)
+![Final newsletter screenshot](images/demo-digest.png)
