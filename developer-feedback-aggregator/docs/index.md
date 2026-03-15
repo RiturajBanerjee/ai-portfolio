@@ -10,7 +10,10 @@ This repository contains a Teams app and a small MCP server that exposes context
 - Sends the message and any relevant context to an OpenAI style model via Azure OpenAI.
 - Uses an MCP endpoint to provide additional context or tools to the model.
 - Returns model generated text back to the user in Teams.
-- Demo Video: [▶ Watch Demo](videos/community-insights-demo.mp4)
+- Demo Video:
+	<video controls width="720">
+  		<source src="https://github.com/RiturajBanerjee/ai-portfolio/raw/refs/heads/main/developer-feedback-aggregator/docs/videos/community-insights-demo.mp4" type="video/mp4">
+	</video>
 
 
 ## High level architecture
