@@ -10,6 +10,11 @@ This repository contains a Teams app and a small MCP server that exposes context
 - Sends the message and any relevant context to an OpenAI style model via Azure OpenAI.
 - Uses an MCP endpoint to provide additional context or tools to the model.
 - Returns model generated text back to the user in Teams.
+- Demo Video:
+	<video controls width="720">
+		<source src="videos/community-insights-demo.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
 
 ## High level architecture
 
@@ -118,15 +123,6 @@ npm run start
 ```
 
 The MCP server is implemented as an Azure Functions app. The `start` script runs the Functions host locally. Make sure `AZURE_MCP_ENDPOINT` points to the Functions host URL and that the function key matches.
-
-
-```html
-<video controls width="720">
-	<source src="videos/community-insights-demo.mp4" type="video/mp4">
-	Your browser does not support the video tag.
-</video>
-```
-
 
 
 ## Security and production notes
