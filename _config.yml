@@ -4,3 +4,7 @@ theme: minima
 
 exclude:
   - node_modules
+  - developer-feedback-aggregator/community-insights/node_modules
+  - developer-feedback-aggregator
+  - brand-perception-analyser
+  - sector-news-bot
